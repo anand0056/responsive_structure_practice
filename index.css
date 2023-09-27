@@ -1,0 +1,60 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  display: grid;
+  grid-template-columns: min(200px) 1fr;
+  /* overflow-y: auto; */
+  /* gap: 10px; */
+}
+.fill {
+  height: 100vh;
+  background-color: rgb(107, 105, 105);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 100px 50px 1fr;
+  gap: 10px;
+}
+.selection {
+  overflow-y: auto;
+  background-color: blue;
+}
+.sidenav {
+  grid-template-rows: unset;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(auto-fill, 50px);
+  gap: 10px;
+  height: 100vh;
+  overflow-y: auto;
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* align-content: center; */
+  background-color: brown;
+}
+.btn {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0;
+  height: 50px;
+  width: 100%;
+}
+.edit {
+  --w: 200px;
+  --n: 3;
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(clamp(100%/ (var(--n) + 1) + 0.1%, var(--w), 100%), 1fr)
+  );
+  gap: 10px;
+}
+.edit > div {
+  height: 100%;
+  width: auto;
+  background-color: aliceblue;
+}
